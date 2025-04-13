@@ -15,6 +15,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "BetelCare Research",
   description: "AI-Powered App for Sri Lankan Betel Farmers",
+  icons: [
+    { rel: "icon", url: "/leaf.png" },
+    { rel: "shortcut icon", url: "/leaf.png" },
+    { rel: "apple-touch-icon", url: "/leaf.png" }
+  ],
 };
 
 export default function RootLayout({
@@ -24,6 +29,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        {/* This is a fallback in case the metadata approach doesn't work */}
+        <link rel="icon" href="/leaf.png" />
+        <link rel="shortcut icon" href="/leaf.png" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
