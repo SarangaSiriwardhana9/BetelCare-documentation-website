@@ -1,36 +1,104 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# BetelCare - Smart Farming Solution
+
+A comprehensive web platform for the BetelCare research project, showcasing an AI-powered mobile application designed specifically for Sri Lankan betel farmers.
+
+## Project Overview
+
+**BetelCare** is a machine learning-powered mobile application developed to support betel farmers by offering real-time insights, predictive analytics, and interactive assistance. This repository contains the web platform built with **Next.js** that showcases the research, features, and documentation of the BetelCare project.
+
+## Key Features
+
+- **Harvest Prediction**: AI-powered yield forecasting for optimized planning  
+- **Disease Detection**: Early identification of leaf issues with CNN technology  
+- **Market Insights**: Data-driven price predictions for maximum profit  
+- **Weather Recommendations**: Climate-based farming advice for better yields  
+
+## Technology Stack
+
+- **Frontend**: Next.js 15, TypeScript, Tailwind CSS  
+- **UI Components**: Shadcn UI, Framer Motion, Lucide Icons  
+- **Mobile App**: Flutter, TensorFlow Lite  
+- **Backend**: Flask, Python  
+- **Machine Learning**: TensorFlow, PyTorch, Scikit-learn  
+
+## Research Team
+
+**Students**:  
+- W.E.I. Ranawaka  
+- U.H. Dewasinghe  
+- B.K.M. Fernando  
+- E.A.L.S. Siriwardhana  
+
+**Supervisors**:  
+- Sanvitha Kasthuriarachchi  
+- Lokesha Weerasinghe  
+
+**Institution**:  
+- Sri Lanka Institute of Information Technology  
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
+- Node.js 18.x or later  
+- npm or yarn  
+
+### Installation
+
+Clone the repository  
+```bash
+git clone https://github.com/your-username/betelcare-web.git
+cd betelcare-web
+```
+
+Install dependencies  
+```bash
+npm install
+# or
+yarn install
+```
+
+Run the development server  
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+betelcare-web/
+│
+├── public/             # Static assets
+├── src/
+│   ├── app/            # Next.js app directory
+│   ├── components/     # Reusable UI components
+│   ├── styles/         # Global styles
+│   └── utils/          # Utility functions
+│
+├── .gitignore
+├── package.json
+├── README.md
+└── tsconfig.json
+```
 
-## Learn More
+## Deployment
 
-To learn more about Next.js, take a look at the following resources:
+The project is deployed on **Vercel**. Any changes pushed to the `main` branch are automatically deployed.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Research Paper
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+A comprehensive research paper detailing our findings, methodology, and results is available in the **Documents** section of the website.
 
-## Deploy on Vercel
+## License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This project is licensed under the **MIT License** - see the [LICENSE](./LICENSE) file for details.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Acknowledgements
+
+- Department of Information Technology, SLIIT  
+- Sri Lankan betel farmers for their valuable feedback and participation  
+- Sri Lanka Department of Meteorology for weather data  
