@@ -274,36 +274,100 @@ export default function DomainSection() {
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
           transition={{ duration: 0.8, delay: 0.6 }}
+          className="mt-16"
         >
-          <div className="bg-gradient-to-r from-gray-100 to-gray-200 rounded-2xl  overflow-hidden">
-            <div className="p-8">
-              <div className="flex items-center mb-8">
-                <div className="p-3 rounded-full mr-4 bg-white/10">
-                  <Code className="h-6 w-6 text-black" />
-                </div>
-                <h3 className="text-2xl font-bold text-black">Technologies Used</h3>
+          <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl p-8 shadow-sm">
+            <div className="flex items-center mb-8">
+              <div className="p-3 rounded-xl mr-4 bg-white shadow-sm">
+                <Code className="h-6 w-6 text-black" />
               </div>
-              
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
-                {[
-                  { name: "Flutter", icon: "/tech/flutter.svg", color: "#42A5F5" },
-                  { name: "TensorFlow", icon: "/tech/tensorflow.svg", color: "#FF6F00" },
-                  { name: "Python", icon: "/tech/python.svg", color: "#3776AB" },
-                  { name: "XGBoost", icon: "/tech/xgboost.png", color: "#2E7D32" },
-                  { name: "Supabase", icon: "/tech/supabase.svg", color: "#3ECF8E" },
-                  { name: "Google Maps", icon: "/tech/googlemaps.svg", color: "#4285F4" },
-               
-                  { name: "Flask", icon: "/tech/flask.svg", color: "#FFFFFF" },
-                  { name: "OpenMeteo", icon: "/tech/openmeteo.svg", color: "#62B8F6" },
-                  { name: "OpenCV", icon: "/tech/opencv.svg", color: "#5C3EE8" },
-                  { name: "Scikit-learn", icon: "/tech/scikit.webp", color: "#F7931E" },
-                  { name: "WhatsApp API", icon: "/tech/whatsapp.svg", color: "#25D366" },
-                ].map((tech, index) => (
+              <div>
+                <h3 className="text-2xl font-bold text-gray-900">Technologies Used</h3>
+                <p className="text-gray-600 mt-1">Modern stack powering our innovative solutions</p>
+              </div>
+            </div>
+            
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+              {[
+                { 
+                  name: "Flutter", 
+                  icon: "/tech/flutter.svg", 
+                  color: "#42A5F5",
+                  category: "Mobile Development"
+                },
+                { 
+                  name: "TensorFlow", 
+                  icon: "/tech/tensorflow.svg", 
+                  color: "#FF6F00",
+                  category: "Machine Learning"
+                },
+                { 
+                  name: "Python", 
+                  icon: "/tech/python.svg", 
+                  color: "#3776AB",
+                  category: "Backend"
+                },
+                { 
+                  name: "XGBoost", 
+                  icon: "/tech/xgboost.png", 
+                  color: "#2E7D32",
+                  category: "Machine Learning"
+                },
+                { 
+                  name: "Supabase", 
+                  icon: "/tech/supabase.svg", 
+                  color: "#3ECF8E",
+                  category: "Database"
+                },
+                { 
+                  name: "Google Maps", 
+                  icon: "/tech/googlemaps.svg", 
+                  color: "#4285F4",
+                  category: "APIs"
+                },
+                { 
+                  name: "Flask", 
+                  icon: "/tech/flask.svg", 
+                  color: "#FFFFFF",
+                  category: "Backend"
+                },
+                { 
+                  name: "OpenMeteo", 
+                  icon: "/tech/openmeteo.svg", 
+                  color: "#62B8F6",
+                  category: "APIs"
+                },
+                { 
+                  name: "OpenCV", 
+                  icon: "/tech/opencv.svg", 
+                  color: "#5C3EE8",
+                  category: "Computer Vision"
+                },
+                { 
+                  name: "Scikit-learn", 
+                  icon: "/tech/scikit.webp", 
+                  color: "#F7931E",
+                  category: "Machine Learning"
+                },
+                { 
+                  name: "WhatsApp API", 
+                  icon: "/tech/whatsapp.svg", 
+                  color: "#25D366",
+                  category: "APIs"
+                }
+              ].map((tech, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  whileHover={{ y: -5, transition: { duration: 0.2 } }}
+                  className="group relative"
+                >
                   <div 
-                    key={index} 
-                    className="bg-white/50 backdrop-blur-sm hover:bg-white/10 transition-colors rounded-xl p-4 flex flex-col items-center justify-center aspect-square"
+                    className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300 h-full flex flex-col items-center justify-center border border-gray-100"
                   >
-                    <div className="relative h-12 w-12 mb-3">
+                    <div className="relative h-12 w-12 mb-4">
                       <Image 
                         src={tech.icon} 
                         alt={tech.name}
@@ -311,12 +375,18 @@ export default function DomainSection() {
                         className="object-contain"
                       />
                     </div>
-                    <span className="text-sm font-medium text-black/80 text-center">{tech.name}</span>
+                    <span className="text-sm font-medium text-gray-900 text-center">{tech.name}</span>
+                    <span className="text-xs text-gray-500 mt-1 text-center">{tech.category}</span>
                   </div>
-                ))}
-              </div>
-              
-             
+                  <div 
+                    className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    style={{ 
+                      background: `linear-gradient(45deg, ${tech.color}10, ${tech.color}05)`,
+                      border: `1px solid ${tech.color}20`
+                    }}
+                  />
+                </motion.div>
+              ))}
             </div>
           </div>
         </motion.div>
