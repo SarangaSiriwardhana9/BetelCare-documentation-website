@@ -45,7 +45,7 @@ export default function ContactSection() {
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <div className="bg-white rounded-xl shadow-lg p-8 border border-gray-100">
+            <div className="bg-white rounded-xl   p-8 border border-gray-200">
               <h4 className="text-xl font-semibold mb-6">Contact Information</h4>
               
               <div className="space-y-6">
@@ -109,7 +109,7 @@ export default function ContactSection() {
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 30 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            <div className="bg-white rounded-xl shadow-lg p-8 border border-gray-100">
+            <div className="bg-white rounded-xl  border-gray-200 p-8 border  ">
               {formSubmitted ? (
                 <div className="text-center py-10">
                   <div className="mx-auto flex items-center justify-center h-12 w-12 rounded-full" style={{ backgroundColor: 'rgba(46, 125, 50, 0.1)' }}>

@@ -1,32 +1,50 @@
+// src/components/Header.tsx
 "use client";
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, ChevronDown, Leaf, BarChart, Cloud, ShoppingCart } from "lucide-react";
+import { Menu, ChevronDown, Leaf, BarChart, Cloud, ShoppingCart, FileText, Users, Home, Info, CalendarDays } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { usePathname } from "next/navigation";
 
+// Streamlined navigation structure with fewer top-level items
 const navItems = [
-  { name: "Home", href: "/#home" },
-  { name: "About", href: "/#about" },
-  { name: "Features", href: "/#features" },
-  { name: "Results", href: "/#results" },
+  { name: "Home", href: "/#home", icon: <Home className="w-4 h-4" /> },
   { 
-    name: "Project Details", 
+    name: "About",
+    href: "#",
+    icon: <Info className="w-4 h-4" />,
+    submenu: [
+      { name: "About Project", href: "/#about", icon: <Info className="w-4 h-4" /> },
+      { name: "Domain", href: "/#domain", icon: <FileText className="w-4 h-4" /> },
+      { name: "Team", href: "/#team", icon: <Users className="w-4 h-4" /> }
+    ]
+  },
+  { 
+    name: "Research", 
     href: "#",
     icon: <Leaf className="w-4 h-4" />,
+    submenu: [
+      { name: "Features", href: "/#features", icon: <Leaf className="w-4 h-4" /> },
+      { name: "Results", href: "/#results", icon: <BarChart className="w-4 h-4" /> },
+      { name: "Documents", href: "/#documents", icon: <FileText className="w-4 h-4" /> },
+      { name: "Milestones", href: "/#milestones", icon: <CalendarDays className="w-4 h-4" /> }
+    ]
+  },
+  { 
+    name: "Project Modules", 
+    href: "#",
+    icon: <Cloud className="w-4 h-4" />,
     submenu: [
       { name: "Disease Detection", href: "/project/disease-detection", icon: <Leaf className="w-4 h-4" /> },
       { name: "Harvest Prediction", href: "/project/harvest-prediction", icon: <BarChart className="w-4 h-4" /> },
       { name: "Market Prediction", href: "/project/market-prediction", icon: <ShoppingCart className="w-4 h-4" /> },
-      { name: "Weather Based Recommendations", href: "/project/weather-recommendations", icon: <Cloud className="w-4 h-4" /> }
+      { name: "Weather Recommendations", href: "/project/weather-recommendations", icon: <Cloud className="w-4 h-4" /> }
     ]
   },
-  { name: "Documents", href: "/#documents" },
-  { name: "Team", href: "/#team" },
-  { name: "Contact", href: "/#contact" }
+  { name: "Contact", href: "/#contact", icon: <Users className="w-4 h-4" /> }
 ];
 
 export default function Header() {
@@ -103,7 +121,7 @@ export default function Header() {
                 <Leaf className="w-6 h-6 text-white" />
               </div>
               <span className="text-2xl font-bold tracking-tight">
-                <span style={{ color: 'var(--color-primary-dark)' }}>Betel</span>
+                <span style={{ color: scrolled || !isHomePage ? 'var(--color-primary-dark)' : 'white' }}>Betel</span>
                 <span style={{ color: 'var(--color-accent)' }}>Care</span>
               </span>
             </Link>
@@ -140,13 +158,14 @@ export default function Header() {
                           animate={{ opacity: 1, y: 0 }}
                           exit={{ opacity: 0, y: 10 }}
                           transition={{ duration: 0.2 }}
-                          className="absolute left-0 top-full mt-1 w-60 rounded-xl overflow-hidden shadow-xl bg-white ring-1 ring-black/5"
+                          className="absolute left-0 top-full mt-1 w-60 rounded-xl overflow-hidden shadow-xl bg-white ring-1 ring-black/5 z-20"
                         >
                           <div className="py-1">
                             {item.submenu.map((subitem) => (
                               <Link
                                 key={subitem.name}
                                 href={subitem.href}
+                                onClick={(e) => scrollToSection(e, subitem.href)}
                                 className="flex items-center gap-3 px-4 py-3 text-sm hover:bg-gray-50 border-l-2 border-transparent hover:border-primary transition-all"
                                 style={{ color: 'var(--color-foreground)' }}
                               >
@@ -217,7 +236,12 @@ export default function Header() {
                             <Accordion type="single" collapsible className="border-none">
                               <AccordionItem value={item.name} className="border-none">
                                 <AccordionTrigger className="py-3 px-4 hover:bg-gray-50 rounded-lg no-underline">
-                                  <span className="text-base font-medium" style={{ color: 'var(--color-foreground)' }}>{item.name}</span>
+                                  <div className="flex items-center">
+                                    <div className="p-1 rounded-md mr-2" style={{ backgroundColor: 'var(--color-primary-light)', color: 'white' }}>
+                                      {item.icon}
+                                    </div>
+                                    <span className="text-base font-medium" style={{ color: 'var(--color-foreground)' }}>{item.name}</span>
+                                  </div>
                                 </AccordionTrigger>
                                 <AccordionContent className="pt-1 pb-3 px-2">
                                   <div className="flex flex-col space-y-1 ml-2">
@@ -225,9 +249,9 @@ export default function Header() {
                                       <Link
                                         key={subitem.name}
                                         href={subitem.href}
+                                        onClick={(e) => scrollToSection(e, subitem.href)}
                                         className="flex items-center gap-3 px-4 py-3 text-sm hover:bg-gray-50 rounded-lg border-l-2 border-transparent hover:border-primary-light transition-all"
                                         style={{ color: 'var(--color-foreground)' }}
-                                        onClick={() => setSheetOpen(false)}
                                       >
                                         <div className="p-1 rounded-md" style={{ backgroundColor: 'var(--color-primary-light)', color: 'white' }}>
                                           {subitem.icon}
@@ -246,6 +270,9 @@ export default function Header() {
                               className="flex items-center gap-3 px-4 py-3 text-base font-medium hover:text-primary-light hover:bg-gray-50 rounded-lg transition-colors"
                               style={{ color: 'var(--color-foreground)' }}
                             >
+                              <div className="p-1 rounded-md" style={{ backgroundColor: 'var(--color-primary-light)', color: 'white' }}>
+                                {item.icon}
+                              </div>
                               {item.name}
                             </Link>
                           )}
