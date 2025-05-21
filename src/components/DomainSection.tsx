@@ -54,7 +54,7 @@ export default function DomainSection() {
                   fill
                   className="object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-transparent flex items-center">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-black/40 flex items-center">
                   <div className="p-8">
                     <h3 className="text-white text-2xl font-bold mb-3">Research Gap & Problem</h3>
                     <p className="text-white/90 max-w-md">
