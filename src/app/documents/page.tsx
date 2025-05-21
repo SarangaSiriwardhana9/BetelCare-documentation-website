@@ -170,7 +170,7 @@ export default function DocumentsPage() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: isLoaded ? 1 : 0, y: isLoaded ? 0 : 30 }}
                 transition={{ duration: 0.5, delay: 0.1 + (categoryIndex * 0.1) }}
-                className="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300"
+                className="bg-white rounded-2xl  border border-black/10 overflow-hidden hover:shadow-sm transition-shadow duration-300"
               >
                 <div className="p-6">
                   <div className="flex items-start justify-between mb-4">

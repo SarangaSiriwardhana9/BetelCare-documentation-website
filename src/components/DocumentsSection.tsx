@@ -83,7 +83,7 @@ export default function DocumentsSection() {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.8, delay: index * 0.1 }}
-              className="bg-white rounded-xl shadow-md p-8 hover:shadow-lg transition-all relative overflow-hidden group"
+              className="bg-white rounded-xl   p-8  transition-all relative overflow-hidden group"
             >
               {/* Decorative corner */}
               <div 
