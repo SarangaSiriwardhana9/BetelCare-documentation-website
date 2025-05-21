@@ -33,48 +33,48 @@ const milestones = [
   {
     title: "Progress Presentation-1",
     date: "November 22, 2024",
-    description: "First milestone presentation covering initial implementation of harvest prediction and disease detection modules.",
+    description: "First milestone presentation covering implementation of backend systems and machine learning modules.",
     marks: "15%",
     status: "completed",
     icon: <Presentation className="h-5 w-5" />,
     link: "/documents/progress-presentation-1.pdf",
     details: [
-      "Data Collection Progress",
-      "Harvest Prediction Model Initial Results",
-      "Disease Detection Prototype Demo",
-      "Technical Challenges & Solutions",
-      "Updated Timeline & Next Steps"
+      "Backend System Architecture Implementation",
+      "ML Model Development & Training",
+      "Harvest Prediction Algorithm Integration",
+      "Disease Detection System Implementation",
+      "API Endpoint Development & Testing"
     ]
   },
   {
     title: "Progress Presentation-2",
     date: "February 18, 2025",
-    description: "Second milestone presentation with results from weather-based recommendations and disease mapping features.",
+    description: "Second milestone presentation showcasing mobile app development and full system integration.",
     marks: "15%",
     status: "completed",
     icon: <Presentation className="h-5 w-5" />,
     link: "/documents/progress-presentation-2.pdf",
     details: [
+      "Mobile Application Development",
+      "Full System Integration",
       "Weather Recommendation System Implementation",
       "Disease Mapping Feature Integration",
-      "User Interface Improvements",
-      "Preliminary Field Testing Results",
-      "Preparation for Final Implementation"
+      "User Interface & Experience Optimization"
     ]
   },
   {
     title: "Final Report Submission",
     date: "April 5, 2025",
-    description: "Comprehensive documentation of research methodology, implementation, and results.",
+    description: "Comprehensive documentation of research methodology, implementation, and results with published research paper.",
     marks: "30%",
-    status: "in-progress",
+    status: "completed",
     icon: <FileText className="h-5 w-5" />,
     link: "/documents/final-report.pdf",
     details: [
-      "Complete Research Documentation",
-      "Implementation Details",
+      "Research Paper Publication",
+      "Documentation Website Creation",
+      "Implementation Details & Architecture",
       "Experimental Results & Analysis",
-      "User Study Findings",
       "Conclusions & Future Work"
     ]
   },
@@ -83,7 +83,7 @@ const milestones = [
     date: "May 10, 2025",
     description: "Final assessment through oral examination and project demonstration.",
     marks: "30%",
-    status: "upcoming",
+    status: "in-progress",
     icon: <CheckCircle className="h-5 w-5" />,
     link: null,
     details: [
@@ -140,16 +140,16 @@ export default function MilestonesSection() {
             <div 
               className="h-full rounded-full transition-all duration-1000"
               style={{ 
-                width: '60%',
+                width: '80%',
                 background: 'linear-gradient(90deg, var(--color-primary) 0%, var(--color-accent) 100%)'
               }}
             ></div>
           </div>
           <div className="flex justify-between absolute -top-2 left-12 right-12">
             {milestones.map((_, index) => {
-              const completed = index < 3;
-              const inProgress = index === 3;
-              const upcoming = index > 3;
+              const completed = index < 4;
+              const inProgress = index === 4;
+              const upcoming = index > 4;
               
               return (
                 <div key={index} className="relative -ml-5">

@@ -1,7 +1,7 @@
-
+// documents/page.tsx
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -9,7 +9,6 @@ import { FileText, ArrowLeft, Download, ExternalLink, BookOpen, PresentationIcon
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
- 
 const documentCategories = [
   {
     title: "Research Proposal",
@@ -21,7 +20,7 @@ const documentCategories = [
       {
         title: "Proposal Reports",
         description: "Individual reports from all 4 team members",
-        link: "https://drive.google.com/drive/folders/your-proposal-folder-id",
+        link: "https://drive.google.com/drive/folders/1ZoMC-1Shay0hw5pxHSxG5GrIKyfYVt0f?usp=sharing",
       }
     ]
   },
@@ -35,17 +34,17 @@ const documentCategories = [
       {
         title: "Proposal Presentation",
         description: "Initial project pitch presentation",
-        link: "https://docs.google.com/presentation/d/your-proposal-presentation-id",
+        link: "https://drive.google.com/file/d/1iHF9ugOwUSf_O_8BMmJUGaQOgjYpmfiB/view?usp=sharing",
       },
       {
         title: "Progress Presentation 1",
         description: "First milestone results and findings",
-        link: "https://docs.google.com/presentation/d/your-progress1-presentation-id",
+        link: "https://drive.google.com/file/d/1xHvxDpr9nfxys4mrPqFbBSeEDeCNvXmi/view?usp=sharing",
       },
       {
         title: "Progress Presentation 2",
         description: "Second milestone results and updates",
-        link: "https://docs.google.com/presentation/d/your-progress2-presentation-id",
+        link: "https://drive.google.com/file/d/1qT7HGKzEh5IA1yIIolfzzJldhsRti8x-/view?usp=sharing",
       }
     ]
   },
@@ -59,7 +58,7 @@ const documentCategories = [
       {
         title: "Team Log Books",
         description: "Weekly logs from all 4 team members",
-        link: "https://drive.google.com/drive/folders/your-logbooks-folder-id",
+        link: "https://drive.google.com/drive/folders/1e61oX9hr2rthg-Ip1MDWEjTEyEmxtS4w?usp=sharing",
       }
     ]
   },
@@ -73,7 +72,7 @@ const documentCategories = [
       {
         title: "Final Reports",
         description: "Complete documentation of research findings",
-        link: "https://drive.google.com/drive/folders/your-final-reports-folder-id",
+        link: "https://drive.google.com/drive/folders/1Kp6md9pZyfcVi4ycUSohb5GKEVWwPAMG?usp=sharing",
       }
     ]
   },
@@ -87,7 +86,7 @@ const documentCategories = [
       {
         title: "Published Paper",
         description: "Academic publication of our research",
-        link: "https://docs.google.com/document/d/your-paper-id",
+        link: "https://drive.google.com/file/d/19aMGRKijwX5LLJdjddWzKU1vnygGFNWs/view?usp=sharing",
       }
     ]
   },
@@ -101,7 +100,7 @@ const documentCategories = [
       {
         title: "Team Profiles",
         description: "Information about all 4 team members",
-        link: "https://docs.google.com/document/d/your-team-profiles-id",
+        link: "https://drive.google.com/drive/folders/1YifQrTT8VADAWkc_rEb979G13fKhfDoe?usp=sharing",
       }
     ]
   }
@@ -112,6 +111,17 @@ export default function DocumentsPage() {
   
   useEffect(() => {
     setIsLoaded(true);
+  }, []);
+
+  const openInNewTab = useCallback((url: string) => {
+    window.open(url, '_blank', 'noopener,noreferrer');
+  }, []);
+
+  const handleCopyCitation = useCallback(() => {
+    navigator.clipboard.writeText(
+      "Ranawaka, W.E.I., Dewasinghe, U.H., Fernando, B.K.M., Siriwardhana, E.A.L.S., Kasthuriarachchi, S., & Weerasinghe, L. (2025). BetelCare: Development of an AI-Powered Application for Sri Lankan Betel Farmers. Journal of Agricultural Technology. Department of Information Technology, Sri Lanka Institute of Information Technology, Malabe, Sri Lanka."
+    );
+    alert("Citation copied to clipboard!");
   }, []);
 
   return (
@@ -154,8 +164,6 @@ export default function DocumentsPage() {
             >
               Access all documentation related to our BetelCare research project, from initial proposals to final reports.
             </motion.p>
-            
-    
           </div>
         </div>
       </section>
@@ -170,7 +178,7 @@ export default function DocumentsPage() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: isLoaded ? 1 : 0, y: isLoaded ? 0 : 30 }}
                 transition={{ duration: 0.5, delay: 0.1 + (categoryIndex * 0.1) }}
-                className="bg-white rounded-2xl  border border-black/10 overflow-hidden hover:shadow-sm transition-shadow duration-300"
+                className="bg-white rounded-2xl border border-black/10 overflow-hidden hover:shadow-sm transition-shadow duration-300"
               >
                 <div className="p-6">
                   <div className="flex items-start justify-between mb-4">
@@ -193,16 +201,14 @@ export default function DocumentsPage() {
                       <div key={docIndex} className="border border-gray-100 rounded-xl p-4 hover:bg-gray-50 transition-colors">
                         <h3 className="font-medium mb-1" style={{ color: category.color }}>{doc.title}</h3>
                         <p className="text-gray-500 text-sm mb-3">{doc.description}</p>
-                        <a 
-                          href={doc.link} 
-                          target="_blank" 
-                          rel="noopener noreferrer"
+                        <button 
+                          onClick={() => openInNewTab(doc.link)}
                           className="inline-flex items-center text-sm font-medium group"
                           style={{ color: category.color }}
                         >
                           View Documents
                           <ExternalLink className="ml-2 h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
-                        </a>
+                        </button>
                       </div>
                     ))}
                   </div>
@@ -233,55 +239,47 @@ export default function DocumentsPage() {
               </p>
             </div>
             
-            <motion.a
+            <motion.button
               whileHover={{ scale: 1.05, boxShadow: "0 10px 25px -5px rgba(46, 125, 50, 0.4)" }}
               whileTap={{ scale: 0.95 }}
-              href="https://drive.google.com/file/d/your-full-package-id/view"
-              target="_blank"
-              rel="noopener noreferrer"
+              onClick={() => openInNewTab("https://drive.google.com/file/d/1l3vOQ0p_MclKkKENYsPMgpxVC6lLscLo/view?usp=sharing")}
               className="inline-flex items-center px-6 py-4 rounded-xl font-medium shadow-lg text-white"
               style={{ backgroundColor: 'var(--color-primary)' }}
             >
               <Download className="mr-2 h-5 w-5" />
               Download Package (PDF, 24MB)
-            </motion.a>
+            </motion.button>
           </div>
         </div>
       </section>
 
       {/* Citation Section */}
       <section className="py-16 bg-white">
-  <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div className="text-center mb-12">
-      <h2 className="text-3xl font-bold mb-4" style={{ color: 'var(--color-foreground)' }}>How to Cite Our Research</h2>
-      <p className="text-gray-600 max-w-3xl mx-auto">
-        If you&apos;re using our research in your academic work, please use the following citation format.
-      </p>
-    </div>
-    
-    <div className="bg-gray-50 rounded-2xl p-6 border border-gray-100">
-      <p className="font-mono text-sm text-gray-700 p-6 bg-white border border-gray-200 rounded-lg mb-6 leading-relaxed">
-        Ranawaka, W.E.I., Dewasinghe, U.H., Fernando, B.K.M., Siriwardhana, E.A.L.S., Kasthuriarachchi, S., & Weerasinghe, L. (2025). BetelCare: Development of an AI-Powered Application for Sri Lankan Betel Farmers. <em>Journal of Agricultural Technology</em>. Department of Information Technology, Sri Lanka Institute of Information Technology, Malabe, Sri Lanka.
-      </p>
-      
-      <div className="flex justify-end">
-        <button
-          onClick={() => {
-            navigator.clipboard.writeText(
-              "Ranawaka, W.E.I., Dewasinghe, U.H., Fernando, B.K.M., Siriwardhana, E.A.L.S., Kasthuriarachchi, S., & Weerasinghe, L. (2025). BetelCare: Development of an AI-Powered Application for Sri Lankan Betel Farmers. Journal of Agricultural Technology. Department of Information Technology, Sri Lanka Institute of Information Technology, Malabe, Sri Lanka."
-            );
-            // You can replace this with a toast notification if available
-            alert("Citation copied to clipboard!");
-          }}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium"
-          style={{ color: 'var(--color-primary)', backgroundColor: 'rgba(76, 175, 80, 0.1)' }}
-        >
-          Copy Citation
-        </button>
-      </div>
-    </div>
-  </div>
-</section>
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4" style={{ color: 'var(--color-foreground)' }}>How to Cite Our Research</h2>
+            <p className="text-gray-600 max-w-3xl mx-auto">
+              If you&apos;re using our research in your academic work, please use the following citation format.
+            </p>
+          </div>
+          
+          <div className="bg-gray-50 rounded-2xl p-6 border border-gray-100">
+            <p className="font-mono text-sm text-gray-700 p-6 bg-white border border-gray-200 rounded-lg mb-6 leading-relaxed">
+              Ranawaka, W.E.I., Dewasinghe, U.H., Fernando, B.K.M., Siriwardhana, E.A.L.S., Kasthuriarachchi, S., & Weerasinghe, L. (2025). BetelCare: Development of an AI-Powered Application for Sri Lankan Betel Farmers. <em>Journal of Agricultural Technology</em>. Department of Information Technology, Sri Lanka Institute of Information Technology, Malabe, Sri Lanka.
+            </p>
+            
+            <div className="flex justify-end">
+              <button
+                onClick={handleCopyCitation}
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium"
+                style={{ color: 'var(--color-primary)', backgroundColor: 'rgba(76, 175, 80, 0.1)' }}
+              >
+                Copy Citation
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <Footer />
     </div>
