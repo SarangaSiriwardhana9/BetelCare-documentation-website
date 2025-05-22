@@ -105,12 +105,7 @@ export default function MilestonesSection() {
     <section ref={ref} className="py-24 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute w-full h-1/2 bottom-0" style={{ 
-          background: 'radial-gradient(50% 50% at 50% 100%, rgba(46, 125, 50, 0.05) 0%, rgba(46, 125, 50, 0) 100%)' 
-        }}></div>
-        <div className="absolute w-1/3 h-32 md:h-64 left-0 top-0 opacity-10" style={{ 
-          background: 'linear-gradient(135deg, var(--color-primary) 0%, transparent 100%)' 
-        }}></div>
+         
         <div className="absolute w-1/3 h-32 md:h-64 right-0 bottom-0 opacity-10" style={{ 
           background: 'linear-gradient(135deg, var(--color-accent) 0%, transparent 100%)' 
         }}></div>

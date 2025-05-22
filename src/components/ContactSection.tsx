@@ -69,7 +69,7 @@ export default function ContactSection() {
                   </div>
                   <div className="ml-4">
                     <p className="font-medium text-gray-900">Email</p>
-                    <p className="text-gray-600 mt-1">betelcare@research.edu</p>
+                    <p className="text-gray-600 mt-1">betelcareapp@gmail.com</p>
                   </div>
                 </div>
                 
