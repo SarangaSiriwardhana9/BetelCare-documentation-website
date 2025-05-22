@@ -1,9 +1,10 @@
+// src/app/project/market-prediction/page.tsx
 "use client";
 
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowLeft, ShoppingCart, Check, ExternalLink, TrendingUp, LineChart, DollarSign, Smartphone } from "lucide-react";
+import { ArrowLeft, Check, ExternalLink, TrendingUp, LineChart, MessageSquare, Languages, Bot } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -14,7 +15,6 @@ export default function MarketPredictionPage() {
 
       {/* Hero Section */}
       <section className="pt-32 pb-16 md:pt-40 md:pb-20 relative overflow-hidden">
-        {/* Background Pattern */}
         <div className="absolute inset-0 opacity-5 z-0">
           <div className="absolute right-0 bottom-0 left-0 h-1/3 bg-gradient-to-t from-green-50 to-transparent" />
         </div>
@@ -27,14 +27,14 @@ export default function MarketPredictionPage() {
                 className="inline-flex items-center text-sm font-medium mb-6 group"
                 style={{ color: 'var(--color-primary)' }}
               >
-           <ArrowLeft className="mr-2 h-4 w-4 transition-transform group-hover:-translate-x-1" />
+                <ArrowLeft className="mr-2 h-4 w-4 transition-transform group-hover:-translate-x-1" />
                 Back to home
               </Link>
               <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4" style={{ color: 'var(--color-foreground)' }}>
                 Market Prediction System
               </h1>
               <p className="text-xl text-gray-600 max-w-3xl">
-                Data-driven price forecasting that empowers betel farmers to maximize profits by identifying the optimal timing and markets for selling their produce.
+                WhatsApp-integrated market forecasting system with multilingual support, providing betel farmers with profitable market insights and price predictions through conversational AI.
               </p>
             </div>
           </div>
@@ -62,12 +62,12 @@ export default function MarketPredictionPage() {
                 className="w-full h-auto rounded-2xl"
                 loading="lazy"
                 placeholder="blur"
-                blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDABQODxIPDRQSEBIXFRQdHx4eHRoaHSQtJSEkMjU1LS0yMi4qLjg0PjU1ODU1Oj4+NTU1NTU1NTU1NTU1NTU1NTX/2wBDAR4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
+                blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAaSQBuAGMALgAgADIAMAAxADb/2wBDABQODxIPDRQSEBIXFRQdHx4eHRoaHSQtJSEkMjU1LS0yMi4qLjg0PjU1ODU1Oj4+NTU1NTU1NTU1NTU1NTU1NTX/2wBDAR4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
               />
-              <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/30 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-br from-green-500/30 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/70 to-transparent">
                 <p className="text-white text-sm md:text-base">
-                  The market prediction system analyzes local market trends to help farmers maximize their economic returns.
+                  The BetelBrio WhatsApp chatbot provides market predictions in Sinhala, Tamil, and English with high usability through familiar interface.
                 </p>
               </div>
             </motion.div>
@@ -79,12 +79,12 @@ export default function MarketPredictionPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
-                <div className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium mb-6 bg-yellow-400"  >
-                  <ShoppingCart className="w-4 h-4 mr-2 text-black" />
-                  Price Forecasting Technology
+                <div className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium mb-6" style={{ backgroundColor: 'rgba(37, 211, 102, 0.1)', color: '#25D366' }}>
+                  <MessageSquare className="w-4 h-4 mr-2" />
+                  WhatsApp Integration
                 </div>
                 
-                <h2 className="text-3xl font-bold mb-6">How It Works</h2>
+                <h2 className="text-3xl font-bold mb-6">Conversational Market Intelligence</h2>
                 
                 <div className="space-y-8 mb-10">
                   <motion.div
@@ -93,13 +93,13 @@ export default function MarketPredictionPage() {
                     transition={{ duration: 0.5, delay: 0.3 }}
                     className="flex items-start"
                   >
-                    <div className="flex-shrink-0 p-2 rounded-lg mr-4" style={{ backgroundColor: 'var(--color-primary-light)', color: 'white' }}>
-                      <TrendingUp className="h-6 w-6" />
+                    <div className="flex-shrink-0 p-2 rounded-lg mr-4" style={{ backgroundColor: '#25D366', color: 'white' }}>
+                      <Bot className="h-6 w-6" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-medium mb-2">Price Prediction</h3>
+                      <h3 className="text-xl font-medium mb-2">BetelBrio Chatbot System</h3>
                       <p className="text-gray-600">
-                        The system predicts betel leaf prices based on leaf type, size, quality grade, and seasonal context, giving farmers vital information for decision-making.
+                        Interactive WhatsApp chatbot with step-by-step conversational interface collecting harvest date, weight, leaf quality, and location data through structured user-friendly workflows.
                       </p>
                     </div>
                   </motion.div>
@@ -111,12 +111,12 @@ export default function MarketPredictionPage() {
                     className="flex items-start"
                   >
                     <div className="flex-shrink-0 p-2 rounded-lg mr-4" style={{ backgroundColor: 'var(--color-primary-dark)', color: 'white' }}>
-                      <ShoppingCart className="h-6 w-6" />
+                      <TrendingUp className="h-6 w-6" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-medium mb-2">Market Recommendations</h3>
+                      <h3 className="text-xl font-medium mb-2">ML-Powered Price Predictions</h3>
                       <p className="text-gray-600">
-                        By analyzing data from major regional markets (Apaladeniya, Kuliyapitiya, and Naiwala), the system identifies the most profitable nearby markets for selling produce.
+                        Trained machine learning models analyze leaf type (P-Type, KT-Type, RKT-Type), quality parameters, and regional trends to determine the most profitable markets for harvest sales.
                       </p>
                     </div>
                   </motion.div>
@@ -128,12 +128,12 @@ export default function MarketPredictionPage() {
                     className="flex items-start"
                   >
                     <div className="flex-shrink-0 p-2 rounded-lg mr-4" style={{ backgroundColor: 'var(--color-accent)', color: 'white' }}>
-                      <LineChart className="h-6 w-6" />
+                      <Languages className="h-6 w-6" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-medium mb-2">Seasonal Insights</h3>
+                      <h3 className="text-xl font-medium mb-2">Multilingual Accessibility</h3>
                       <p className="text-gray-600">
-                        The system accounts for seasonal factors and historical price trends to help farmers anticipate market fluctuations and plan harvests strategically.
+                        Complete support for Sinhala, Tamil, and English languages, ensuring regional accessibility and improving farmer engagement across Sri Lanka&apos;s diverse linguistic communities.
                       </p>
                     </div>
                   </motion.div>
@@ -145,28 +145,29 @@ export default function MarketPredictionPage() {
                     className="flex items-start"
                   >
                     <div className="flex-shrink-0 p-2 rounded-lg mr-4" style={{ backgroundColor: 'var(--color-primary)', color: 'white' }}>
-                      <Smartphone className="h-6 w-6" />
+                      <LineChart className="h-6 w-6" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-medium mb-2">Multi-Platform Access</h3>
+                      <h3 className="text-xl font-medium mb-2">Bridge AI-Driven Decision Making</h3>
                       <p className="text-gray-600">
-                        Farmers can access market predictions through both the Flutter mobile app and a WhatsApp chatbot, ensuring accessibility even in areas with limited connectivity.
+                        Successfully bridges complex ML predictions with practical farming workflows, providing actionable insights that farmers can understand and implement for profitable decision-making.
                       </p>
                     </div>
                   </motion.div>
                 </div>
                 
                 <div className="bg-gray-50 rounded-xl p-6 border border-gray-100">
-                  <h3 className="text-lg font-medium mb-4">Prediction Performance</h3>
+                  <h3 className="text-lg font-medium mb-4">Chatbot Features</h3>
                   <div className="space-y-3">
                     {[
-                      { metric: "Overall price prediction accuracy", value: "87.4%" },
-                      { metric: "F1-Score", value: "86.9%" },
-                      { metric: "Profit improvement for farmers", value: "23.5%" }
-                    ].map((stat, index) => (
+                      { feature: "High Usability", description: "Familiar WhatsApp interface" },
+                      { feature: "Step-by-Step Guidance", description: "Structured data collection" },
+                      { feature: "Predictive Intelligence", description: "ML-powered recommendations" },
+                      { feature: "Research Gap Addressed", description: "First ML-powered betel chatbot" }
+                    ].map((item, index) => (
                       <div key={index} className="flex justify-between items-center">
-                        <span className="text-gray-600">{stat.metric}</span>
-                        <span className="font-medium" style={{ color: 'var(--color-primary-dark)' }}>{stat.value}</span>
+                        <span className="text-gray-600">{item.feature}</span>
+                        <span className="font-medium text-green-600">{item.description}</span>
                       </div>
                     ))}
                   </div>
@@ -175,8 +176,47 @@ export default function MarketPredictionPage() {
             </div>
           </div>
           
-          {/* Additional Details */}
+          {/* Comparison Table */}
           <div className="mt-24">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="bg-white rounded-xl shadow-md p-8 border border-gray-100"
+            >
+              <h3 className="text-2xl font-bold mb-6 text-center">Platform Comparison</h3>
+              <div className="overflow-x-auto">
+                <table className="w-full border-collapse">
+                  <thead>
+                    <tr className="border-b-2" style={{ borderColor: 'var(--color-primary)' }}>
+                      <th className="text-left py-4 px-6 font-semibold">Feature</th>
+                      <th className="text-center py-4 px-6 font-semibold">Mobile App</th>
+                      <th className="text-center py-4 px-6 font-semibold">WhatsApp Chatbot</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {[
+                      { feature: "Prediction Scope", mobile: "Full market analytics", whatsapp: "Main features" },
+                      { feature: "User Interface", mobile: "Dynamic filters", whatsapp: "Button flow" },
+                      { feature: "Internet Requirement", mobile: "High", whatsapp: "Low" },
+                      { feature: "Language Support", mobile: "Primarily English", whatsapp: "Multilingual" },
+                      { feature: "Device Compatibility", mobile: "Android smartphones only", whatsapp: "Any" },
+                      { feature: "Accessibility", mobile: "Moderate for new users", whatsapp: "High familiar" }
+                    ].map((row, index) => (
+                      <tr key={index} className="border-b border-gray-100 hover:bg-gray-50">
+                        <td className="py-4 px-6 font-medium">{row.feature}</td>
+                        <td className="py-4 px-6 text-center text-gray-600">{row.mobile}</td>
+                        <td className="py-4 px-6 text-center font-medium" style={{ color: '#25D366' }}>{row.whatsapp}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Technical Implementation */}
+          <div className="mt-12">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -184,19 +224,19 @@ export default function MarketPredictionPage() {
               className="grid grid-cols-1 md:grid-cols-2 gap-8"
             >
               <div className="bg-white rounded-xl shadow-md p-8 border border-gray-100">
-                <h3 className="text-2xl font-bold mb-4">Technical Implementation</h3>
+                <h3 className="text-2xl font-bold mb-4">Technical Architecture</h3>
                 <p className="text-gray-600 mb-6">
-                  Our market prediction system uses XGBoost machine learning models deployed on a scalable backend to ensure reliable predictions even during peak usage periods.
+                  The market prediction system integrates advanced ML models with conversational AI through WhatsApp Business API, making sophisticated predictions accessible to rural farmers.
                 </p>
                 
                 <h4 className="font-medium mb-3" style={{ color: 'var(--color-primary-dark)' }}>Key Technologies</h4>
                 <ul className="space-y-2 mb-6">
                   {[
-                    "XGBoost machine learning model",
-                    "Python Flask backend on Railway.app",
-                    "Feature engineering for market variables",
-                    "WhatsApp API integration for chatbot",
-                    "Multi-language support (Sinhala, Tamil, English)"
+                    "WhatsApp Business API integration",
+                    "360Dialog for chatbot connectivity",
+                    "Machine learning model backend",
+                    "Multilingual natural language processing",
+                    "Structured conversational workflows"
                   ].map((tech, index) => (
                     <li key={index} className="flex items-start">
                       <Check className="h-5 w-5 mr-2 flex-shrink-0" style={{ color: 'var(--color-primary)' }} />
@@ -207,20 +247,20 @@ export default function MarketPredictionPage() {
               </div>
               
               <div className="bg-white rounded-xl shadow-md p-8 border border-gray-100">
-                <h3 className="text-2xl font-bold mb-4">Feature Engineering</h3>
+                <h3 className="text-2xl font-bold mb-4">User Experience Design</h3>
                 <p className="text-gray-600 mb-6">
-                  The accuracy of our market predictions is enhanced through specialized feature engineering that accounts for complex market dynamics.
+                  The BetelBrio chatbot addresses research gaps by providing the first ML-powered conversational interface specifically designed for betel farming market insights.
                 </p>
                 
                 <div className="space-y-4">
                   {[
-                    { feature: "Leaf Density Index", description: "Calculates quality-to-weight ratio for pricing" },
-                    { feature: "Historical Price Deviation", description: "Measures market volatility for risk assessment" },
-                    { feature: "Seasonal Adjustment Factors", description: "Accounts for predictable annual price cycles" },
-                    { feature: "Market Competition Index", description: "Estimates buyer competition at different markets" }
+                    { aspect: "User Flow", description: "Step-by-step data collection with confirmation" },
+                    { aspect: "Language Selection", description: "Automatic language detection and switching" },
+                    { aspect: "Input Validation", description: "Structured format ensuring data quality" },
+                    { aspect: "Result Delivery", description: "Clear profit recommendations with market locations" }
                   ].map((item, index) => (
                     <div key={index} className="bg-gray-50 rounded-lg p-4">
-                      <p className="font-medium" style={{ color: 'var(--color-primary-dark)' }}>{item.feature}</p>
+                      <p className="font-medium" style={{ color: 'var(--color-primary-dark)' }}>{item.aspect}</p>
                       <p className="text-gray-600 text-sm">{item.description}</p>
                     </div>
                   ))}
@@ -228,39 +268,6 @@ export default function MarketPredictionPage() {
               </div>
             </motion.div>
           </div>
-          
-          {/* Impact Metrics */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="mt-12 bg-white rounded-xl shadow-lg p-8 border border-gray-100"
-          >
-            <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
-              <h3 className="text-2xl font-bold">Economic Impact</h3>
-              <div className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium" style={{ backgroundColor: 'rgba(255, 215, 0, 0.2)', color: 'var(--color-accent)' }}>
-                <DollarSign className="w-4 h-4 mr-2" />
-                Field-Validated Results
-              </div>
-            </div>
-            
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {[
-                { metric: "Average Income Increase", value: "21%", icon: <DollarSign className="h-6 w-6" /> },
-                { metric: "Market Selection Accuracy", value: "92%", icon: <ShoppingCart className="h-6 w-6" /> },
-                { metric: "Time Saved on Market Research", value: "8.5 hrs/week", icon: <TrendingUp className="h-6 w-6" /> },
-                { metric: "Farmer Adoption Rate", value: "84%", icon: <Smartphone className="h-6 w-6" /> }
-              ].map((stat, index) => (
-                <div key={index} className="bg-gray-50 rounded-xl p-6 text-center">
-                  <div className="inline-flex items-center justify-center p-3 rounded-full mb-4" style={{ backgroundColor: 'var(--color-accent)', color: 'white' }}>
-                    {stat.icon}
-                  </div>
-                  <h4 className="text-lg font-medium mb-1" style={{ color: 'var(--color-foreground)' }}>{stat.metric}</h4>
-                  <p className="text-2xl font-bold" style={{ color: 'var(--color-primary-dark)' }}>{stat.value}</p>
-                </div>
-              ))}
-            </div>
-          </motion.div>
         </div>
       </section>
       
@@ -269,7 +276,7 @@ export default function MarketPredictionPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold mb-6">Learn More About Our Research</h2>
           <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-            Explore our comprehensive documentation and research findings on the market prediction system.
+            Explore our comprehensive documentation and research findings on the WhatsApp-integrated market prediction system.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link

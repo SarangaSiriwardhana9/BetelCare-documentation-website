@@ -242,7 +242,7 @@ export default function DocumentsPage() {
             <motion.button
               whileHover={{ scale: 1.05, boxShadow: "0 10px 25px -5px rgba(46, 125, 50, 0.4)" }}
               whileTap={{ scale: 0.95 }}
-              onClick={() => openInNewTab("https://drive.google.com/file/d/1l3vOQ0p_MclKkKENYsPMgpxVC6lLscLo/view?usp=sharing")}
+              onClick={() => openInNewTab("https://drive.google.com/drive/folders/1FRfMmbkCGb7JHUX5D9tnhMMaQUW3-pfl?usp=sharing")}
               className="inline-flex items-center px-6 py-4 rounded-xl font-medium shadow-lg text-white"
               style={{ backgroundColor: 'var(--color-primary)' }}
             >

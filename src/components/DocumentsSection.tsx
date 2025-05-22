@@ -33,7 +33,7 @@ const documents = [
     description: "Academic paper detailing the methodology, experiments, and outcomes.",
     icon: <Book className="h-10 w-10" />,
     link: "https://drive.google.com/file/d/19aMGRKijwX5LLJdjddWzKU1vnygGFNWs/view?usp=sharing",
-    color: "var(--color-accent)"
+    color: "var(--color-primary-dark)"
   },
   {
     title: "Final Reports",
@@ -60,7 +60,7 @@ export default function DocumentsSection() {
   };
 
   return (
-    <section ref={ref} className="py-24 bg-gray-50">
+    <section ref={ref} className="py-24  ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -80,14 +80,14 @@ export default function DocumentsSection() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 ">
           {documents.map((doc, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.8, delay: index * 0.1 }}
-              className="bg-white rounded-xl p-8 transition-all relative overflow-hidden group"
+              className="bg-white rounded-xl p-8 transition-all border  border-gray-200 relative overflow-hidden group"
             >
               {/* Decorative corner */}
               <div 

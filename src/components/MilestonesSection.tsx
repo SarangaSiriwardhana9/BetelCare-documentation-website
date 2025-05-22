@@ -11,7 +11,7 @@ import {
   Clock,
   ChevronDown
 } from "lucide-react";
-import Link from "next/link";
+ 
 
 const milestones = [
   {
@@ -50,7 +50,7 @@ const milestones = [
     title: "Progress Presentation-2",
     date: "February 18, 2025",
     description: "Second milestone presentation showcasing mobile app development and full system integration.",
-    marks: "15%",
+    marks: "30%",
     status: "completed",
     icon: <Presentation className="h-5 w-5" />,
     link: "/documents/progress-presentation-2.pdf",
@@ -66,7 +66,7 @@ const milestones = [
     title: "Final Report Submission",
     date: "April 5, 2025",
     description: "Comprehensive documentation of research methodology, implementation, and results with published research paper.",
-    marks: "30%",
+    marks: "25%",
     status: "completed",
     icon: <FileText className="h-5 w-5" />,
     link: "/documents/final-report.pdf",
@@ -79,10 +79,10 @@ const milestones = [
     ]
   },
   {
-    title: "Viva",
+    title: "Final Viva",
     date: "May 10, 2025",
     description: "Final assessment through oral examination and project demonstration.",
-    marks: "30%",
+    marks: "20%",
     status: "in-progress",
     icon: <CheckCircle className="h-5 w-5" />,
     link: null,
@@ -153,7 +153,7 @@ export default function MilestonesSection() {
                       completed 
                         ? 'bg-white border-primary' 
                         : inProgress 
-                          ? 'bg-white border-accent' 
+                          ? 'bg-white border-amber-800' 
                           : 'bg-white border-gray-300'
                     }`}
                     style={{ 
@@ -168,7 +168,7 @@ export default function MilestonesSection() {
                       <CheckCircle className="h-5 w-5" style={{ color: 'var(--color-primary)' }} />
                     )}
                     {inProgress && (
-                      <div className="w-2 h-2 bg-accent rounded-full animate-pulse" style={{ backgroundColor: 'var(--color-accent)' }}></div>
+                      <div className="w-2 h-2 bg-amber-700 rounded-full animate-pulse" style={{ backgroundColor: 'var(--color-accent)' }}></div>
                     )}
                     {upcoming && (
                       <div className="w-2 h-2 bg-gray-300 rounded-full"></div>
@@ -179,7 +179,7 @@ export default function MilestonesSection() {
                       completed 
                         ? 'text-primary' 
                         : inProgress 
-                          ? 'text-accent' 
+                          ? 'text-amber-700' 
                           : 'text-gray-400'
                     }`}
                     style={{ 
@@ -301,18 +301,7 @@ export default function MilestonesSection() {
                         ))}
                       </ul>
                       
-                      {milestone.link && (
-                        <div className="mt-6">
-                          <Link 
-                            href={milestone.link}
-                            className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-white transition-transform hover:scale-105"
-                            style={{ backgroundColor: 'var(--color-primary)' }}
-                          >
-                            <FileText className="h-4 w-4" />
-                            View Documentation
-                          </Link>
-                        </div>
-                      )}
+                       
                     </div>
                   </motion.div>
                 )}

@@ -4,7 +4,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowLeft, Leaf, Check, ExternalLink, AlertTriangle, Search, Microscope, Zap } from "lucide-react";
+import { ArrowLeft, Leaf, Check, ExternalLink, Search, Microscope, Zap, MapPin } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -15,7 +15,6 @@ export default function DiseaseDetectionPage() {
 
       {/* Hero Section */}
       <section className="pt-32 pb-16 md:pt-40 md:pb-20 relative overflow-hidden">
-        {/* Background Pattern */}
         <div className="absolute inset-0 opacity-5 z-0">
           <div className="absolute right-0 bottom-0 left-0 h-1/3 bg-gradient-to-t from-green-50 to-transparent" />
         </div>
@@ -35,7 +34,7 @@ export default function DiseaseDetectionPage() {
                 Disease Detection System
               </h1>
               <p className="text-xl text-gray-600 max-w-3xl">
-                Advanced computer vision technology for early detection of diseases and pests in betel leaves, enabling timely intervention and reducing crop losses.
+                Advanced CNN-based real-time detection system for identifying two critical diseases and two major pests in betel leaves, enabling immediate intervention and treatment recommendations.
               </p>
             </div>
           </div>
@@ -68,7 +67,7 @@ export default function DiseaseDetectionPage() {
               />
               <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/70 to-transparent">
                 <p className="text-white text-sm md:text-base">
-                  The CNN model can detect various diseases including brown spots, bacterial leaf blight, and pest infestations.
+                  The CNN model accurately detects brown spots, bacterial leaf blight, firefly infestations, and two-spotted red spider mites in real-time.
                 </p>
               </div>
             </motion.div>
@@ -85,7 +84,7 @@ export default function DiseaseDetectionPage() {
                   Convolutional Neural Networks
                 </div>
                 
-                <h2 className="text-3xl font-bold mb-6">How It Works</h2>
+                <h2 className="text-3xl font-bold mb-6">Real-Time Detection System</h2>
                 
                 <div className="space-y-8 mb-10">
                   <motion.div
@@ -98,9 +97,9 @@ export default function DiseaseDetectionPage() {
                       <Search className="h-6 w-6" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-medium mb-2">Image Analysis</h3>
+                      <h3 className="text-xl font-medium mb-2">Advanced Image Processing</h3>
                       <p className="text-gray-600">
-                        Farmers capture images of betel leaves using their smartphone camera. Our CNN model processes these images through multiple convolutional layers to extract features indicative of disease or pest presence.
+                        Farmers capture images using mobile devices which are processed in real-time through advanced preprocessing techniques including segmentation, color analysis, and feature extraction for accurate diagnosis.
                       </p>
                     </div>
                   </motion.div>
@@ -115,9 +114,9 @@ export default function DiseaseDetectionPage() {
                       <Microscope className="h-6 w-6" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-medium mb-2">Disease Identification</h3>
+                      <h3 className="text-xl font-medium mb-2">Comprehensive Disease & Pest Detection</h3>
                       <p className="text-gray-600">
-                        The system accurately identifies common betel leaf conditions including brown spots, bacterial leaf blight, and pest infestations like fireflies and two-spotted spider mites.
+                        The CNN-based system identifies two critical diseases (brown spots and bacterial leaf blight) and two major pests (firefly and two-spotted red spider mites) with high accuracy.
                       </p>
                     </div>
                   </motion.div>
@@ -132,9 +131,9 @@ export default function DiseaseDetectionPage() {
                       <Zap className="h-6 w-6" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-medium mb-2">Treatment Recommendations</h3>
+                      <h3 className="text-xl font-medium mb-2">Rule-Based Treatment Engine</h3>
                       <p className="text-gray-600">
-                        Upon detection, the system provides tailored treatment recommendations including appropriate pesticides, dosages, and application methods based on the severity of the issue.
+                        Precise and actionable treatment recommendations including specific pesticides, organic alternatives, dosage information, and customized application schedules based on severity and lifecycle analysis.
                       </p>
                     </div>
                   </motion.div>
@@ -146,28 +145,29 @@ export default function DiseaseDetectionPage() {
                     className="flex items-start"
                   >
                     <div className="flex-shrink-0 p-2 rounded-lg mr-4" style={{ backgroundColor: 'var(--color-primary)', color: 'white' }}>
-                      <AlertTriangle className="h-6 w-6" />
+                      <MapPin className="h-6 w-6" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-medium mb-2">Outbreak Mapping</h3>
+                      <h3 className="text-xl font-medium mb-2">Geolocation-Based Disease Mapping</h3>
                       <p className="text-gray-600">
-                        Geospatial tools using Google Maps SDK visualize disease outbreaks across farms, enabling community-level preventive measures against spreading infections.
+                        Real-time disease spread mapping using geotagged reports and Flutter Location plugin to identify outbreak clusters, predict spread patterns, and enable coordinated intervention efforts.
                       </p>
                     </div>
                   </motion.div>
                 </div>
                 
                 <div className="bg-gray-50 rounded-xl p-6 border border-gray-100">
-                  <h3 className="text-lg font-medium mb-4">Technical Performance</h3>
+                  <h3 className="text-lg font-medium mb-4">Detection Capabilities</h3>
                   <div className="space-y-3">
                     {[
-                      { metric: "Disease detection accuracy", value: "94.3%" },
-                      { metric: "Processing time per image", value: "< 2 seconds" },
-                      { metric: "Supported disease types", value: "12+" }
-                    ].map((stat, index) => (
+                      { condition: "Brown Spots Disease", status: "High Accuracy Detection" },
+                      { condition: "Bacterial Leaf Blight", status: "High Accuracy Detection" },
+                      { condition: "Firefly Pest Infestation", status: "Real-time Identification" },
+                      { condition: "Two-Spotted Red Spider Mites", status: "Advanced Pattern Recognition" }
+                    ].map((item, index) => (
                       <div key={index} className="flex justify-between items-center">
-                        <span className="text-gray-600">{stat.metric}</span>
-                        <span className="font-medium" style={{ color: 'var(--color-primary-dark)' }}>{stat.value}</span>
+                        <span className="text-gray-600">{item.condition}</span>
+                        <span className="font-medium text-green-600">{item.status}</span>
                       </div>
                     ))}
                   </div>
@@ -185,19 +185,19 @@ export default function DiseaseDetectionPage() {
               className="grid grid-cols-1 md:grid-cols-2 gap-8"
             >
               <div className="bg-white rounded-xl shadow-md p-8 border border-gray-100">
-                <h3 className="text-2xl font-bold mb-4">Implementation Details</h3>
+                <h3 className="text-2xl font-bold mb-4">Technical Implementation</h3>
                 <p className="text-gray-600 mb-6">
-                  Our disease detection system is built on TensorFlow and deployed to mobile devices using TensorFlow Lite for efficient on-device inference, even in areas with limited connectivity.
+                  The disease detection system employs cutting-edge CNN architecture with advanced preprocessing techniques to ensure high accuracy even with complex leaf textures and overlapping symptoms.
                 </p>
                 
                 <h4 className="font-medium mb-3" style={{ color: 'var(--color-primary-dark)' }}>Key Technologies</h4>
                 <ul className="space-y-2 mb-6">
                   {[
-                    "Convolutional Neural Networks (CNN)",
-                    "TensorFlow & TensorFlow Lite",
-                    "Image preprocessing techniques",
-                    "Google Maps SDK for geospatial visualization",
-                    "Rule-based treatment recommendation system"
+                    "Convolutional Neural Network (CNN) architecture",
+                    "Advanced image preprocessing and segmentation",
+                    "Real-time mobile processing capabilities",
+                    "Color analysis and feature extraction algorithms",
+                    "Rule-based treatment recommendation engine"
                   ].map((tech, index) => (
                     <li key={index} className="flex items-start">
                       <Check className="h-5 w-5 mr-2 flex-shrink-0" style={{ color: 'var(--color-primary)' }} />
@@ -208,23 +208,21 @@ export default function DiseaseDetectionPage() {
               </div>
               
               <div className="bg-white rounded-xl shadow-md p-8 border border-gray-100">
-                <h3 className="text-2xl font-bold mb-4">Research Impact</h3>
+                <h3 className="text-2xl font-bold mb-4">Treatment & Monitoring</h3>
                 <p className="text-gray-600 mb-6">
-                  Our disease detection system has shown significant benefits for betel farmers in our test regions, with measurable improvements in early intervention and reduced crop losses.
+                  The system provides comprehensive treatment guidance with automated reminders and real-time disease spread monitoring across farming communities.
                 </p>
                 
                 <div className="space-y-4">
                   {[
-                    { metric: "Reduction in disease-related crop loss", value: "68%" },
-                    { metric: "Decrease in pesticide usage", value: "42%" },
-                    { metric: "Earlier disease detection", value: "7-10 days" },
-                    { metric: "Farmer adoption rate", value: "76%" }
-                  ].map((impact, index) => (
+                    { feature: "Instant Diagnosis", description: "Real-time results enabling swift farmer response" },
+                    { feature: "Treatment Schedules", description: "Customized application timing based on disease lifecycle" },
+                    { feature: "Smart Notifications", description: "Dynamic reminders for scheduled treatments" },
+                    { feature: "Disease Mapping", description: "Interactive maps showing outbreak clusters and trends" }
+                  ].map((item, index) => (
                     <div key={index} className="bg-gray-50 rounded-lg p-4">
-                      <div className="flex justify-between items-center">
-                        <span className="text-gray-600">{impact.metric}</span>
-                        <span className="text-lg font-bold" style={{ color: 'var(--color-primary-dark)' }}>{impact.value}</span>
-                      </div>
+                      <p className="font-medium" style={{ color: 'var(--color-primary-dark)' }}>{item.feature}</p>
+                      <p className="text-gray-600 text-sm">{item.description}</p>
                     </div>
                   ))}
                 </div>
@@ -239,7 +237,7 @@ export default function DiseaseDetectionPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold mb-6">Learn More About Our Research</h2>
           <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-            Explore our comprehensive documentation and research findings on the disease detection system.
+            Explore our comprehensive documentation and research findings on the CNN-based disease detection system.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link

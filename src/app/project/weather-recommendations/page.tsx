@@ -4,7 +4,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowLeft, Cloud, Check, ExternalLink, Droplets, Thermometer, Shield, Smartphone } from "lucide-react";
+import { ArrowLeft, Cloud, Check, ExternalLink, Droplets, Thermometer, Shield, Calendar, AlertTriangle, TrendingUp } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -15,7 +15,6 @@ export default function WeatherRecommendationsPage() {
 
       {/* Hero Section */}
       <section className="pt-32 pb-16 md:pt-40 md:pb-20 relative overflow-hidden">
-        {/* Background Pattern */}
         <div className="absolute inset-0 opacity-5 z-0">
           <div className="absolute right-0 bottom-0 left-0 h-1/3 bg-gradient-to-t from-green-50 to-transparent" />
         </div>
@@ -35,7 +34,7 @@ export default function WeatherRecommendationsPage() {
                 Weather Recommendations System
               </h1>
               <p className="text-xl text-gray-600 max-w-3xl">
-                Smart climate-based advisory system that helps betel farmers optimize watering, fertilizing, and protective measures based on current and forecasted weather conditions.
+                Three-layer architecture with specialized Random Forest models achieving 99%+ accuracy for watering, fertilizing, and protection recommendations based on real-time weather data.
               </p>
             </div>
           </div>
@@ -63,7 +62,7 @@ export default function WeatherRecommendationsPage() {
                 className="w-full h-auto rounded-2xl"
                 loading="lazy"
                 placeholder="blur"
-                blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDABQODxIPDRQSEBIXFRQdHx4eHRoaHSQtJSEkMjU1LS0yMi4qLjg0PjU1ODU1Oj4+NTU1NTU1NTU1NTU1NTU1NTX/2wBDAR4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
+                blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAaSQBuAGMALgAgADIAMAAxADb/2wBDABQODxIPDRQSEBIXFRQdHx4eHRoaHSQtJSEkMjU1LS0yMi4qLjg0PjU1ODU1Oj4+NTU1NTU1NTU1NTU1NTU1NTX/2wBDAR4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
               />
               <div className="absolute inset-0 bg-gradient-to-br from-blue-500/30 to-transparent" />
               
@@ -84,7 +83,7 @@ export default function WeatherRecommendationsPage() {
               
               <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/70 to-transparent">
                 <p className="text-white text-sm md:text-base">
-                  The system provides location-specific advice using real-time weather data from multiple sources including OpenMeteo and the Sri Lanka Department of Meteorology.
+                  Three specialized Random Forest models with 7-day outlook providing location-specific recommendations for Kurunegala, Puttalam, and Anamaduwa regions.
                 </p>
               </div>
             </motion.div>
@@ -98,10 +97,10 @@ export default function WeatherRecommendationsPage() {
               >
                 <div className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium mb-6" style={{ backgroundColor: 'rgba(76, 175, 80, 0.1)', color: 'var(--color-primary-light)' }}>
                   <Cloud className="w-4 h-4 mr-2" />
-                  Climate-Adaptive Technology
+                  Random Forest Models
                 </div>
                 
-                <h2 className="text-3xl font-bold mb-6">How It Works</h2>
+                <h2 className="text-3xl font-bold mb-6">Three-Layer Architecture</h2>
                 
                 <div className="space-y-8 mb-10">
                   <motion.div
@@ -114,9 +113,9 @@ export default function WeatherRecommendationsPage() {
                       <Droplets className="h-6 w-6" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-medium mb-2">Watering Recommendations</h3>
+                      <h3 className="text-xl font-medium mb-2">Watering Model (99.59% Accuracy)</h3>
                       <p className="text-gray-600">
-                        The system analyzes rainfall patterns and soil moisture to provide specific watering schedules (no watering, water once, or water twice) optimized for betel cultivation.
+                        Random Forest model with F1 score of 0.996, analyzing rainfall patterns, temperature ranges, consecutive dry days, and crop growth stage to recommend optimal watering frequency for water conservation.
                       </p>
                     </div>
                   </motion.div>
@@ -131,9 +130,9 @@ export default function WeatherRecommendationsPage() {
                       <Thermometer className="h-6 w-6" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-medium mb-2">Fertilizer Timing</h3>
+                      <h3 className="text-xl font-medium mb-2">Fertilizing Model (99.7% Accuracy)</h3>
                       <p className="text-gray-600">
-                        Based on weather conditions, the system determines the most effective days for fertilizer application to maximize nutrient absorption and minimize runoff.
+                        Feature importance analysis reveals rainfall amount (49.4%) and classifications (heavy: 29.0%, moderate: 7.7%) as dominant factors, with regional variations recommending cow dung or compost based on location.
                       </p>
                     </div>
                   </motion.div>
@@ -148,9 +147,9 @@ export default function WeatherRecommendationsPage() {
                       <Shield className="h-6 w-6" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-medium mb-2">Protection Measures</h3>
+                      <h3 className="text-xl font-medium mb-2">Protection Model (99.8% Accuracy)</h3>
                       <p className="text-gray-600">
-                        During extreme weather events, the system suggests protective actions such as installing shade structures or improving drainage to safeguard crops.
+                        Categorizes weather into three risk levels with specific thresholds: high temperature (33.0°C), low rainfall (2.0mm), and high rainfall (20.0mm), providing location-specific protection strategies.
                       </p>
                     </div>
                   </motion.div>
@@ -162,28 +161,31 @@ export default function WeatherRecommendationsPage() {
                     className="flex items-start"
                   >
                     <div className="flex-shrink-0 p-2 rounded-lg mr-4" style={{ backgroundColor: 'var(--color-primary)', color: 'white' }}>
-                      <Smartphone className="h-6 w-6" />
+                      <Calendar className="h-6 w-6" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-medium mb-2">User-Friendly Alerts</h3>
+                      <h3 className="text-xl font-medium mb-2">7-Day Outlook Integration</h3>
                       <p className="text-gray-600">
-                        The app sends timely notifications about significant weather changes, allowing farmers to take preventive actions before adverse conditions impact their crops.
+                        Comprehensive recommendation calendar aligned with typical 15-22 day harvesting intervals, providing timely guidance through notification system and visual farming activity guidance.
                       </p>
                     </div>
                   </motion.div>
                 </div>
                 
                 <div className="bg-gray-50 rounded-xl p-6 border border-gray-100">
-                  <h3 className="text-lg font-medium mb-4">Model Accuracy</h3>
+                  <h3 className="text-lg font-medium mb-4">Model Performance Metrics</h3>
                   <div className="space-y-3">
                     {[
-                      { model: "Watering Model", accuracy: "99.6%" },
-                      { model: "Fertilizer Model", accuracy: "97.7%" },
-                      { model: "Protection Model", accuracy: "99.8%" }
+                      { model: "Watering Recommendations", accuracy: "99.59%", f1: "0.996" },
+                      { model: "Fertilizing Recommendations", accuracy: "99.7%", f1: "0.997" },
+                      { model: "Protection Recommendations", accuracy: "99.8%", f1: "0.998" }
                     ].map((stat, index) => (
                       <div key={index} className="flex justify-between items-center">
                         <span className="text-gray-600">{stat.model}</span>
-                        <span className="font-medium" style={{ color: 'var(--color-primary-dark)' }}>{stat.accuracy}</span>
+                        <div className="text-right">
+                          <span className="font-medium" style={{ color: 'var(--color-primary-dark)' }}>{stat.accuracy}</span>
+                          <span className="text-gray-500 text-sm ml-2">F1: {stat.f1}</span>
+                        </div>
                       </div>
                     ))}
                   </div>
@@ -192,7 +194,7 @@ export default function WeatherRecommendationsPage() {
             </div>
           </div>
           
-          {/* Additional Details */}
+          {/* System Architecture */}
           <div className="mt-24">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -200,20 +202,20 @@ export default function WeatherRecommendationsPage() {
               transition={{ duration: 0.8 }}
               className="grid grid-cols-1 md:grid-cols-2 gap-8"
             >
-              <div className="bg-white rounded-xl shadow-md p-8 border border-gray-100">
-                <h3 className="text-2xl font-bold mb-4">System Architecture</h3>
+              <div className="bg-white rounded-xl shadow-sm p-8 border border-gray-100">
+                <h3 className="text-2xl font-bold mb-4">Three-Layer System Architecture</h3>
                 <p className="text-gray-600 mb-6">
-                  Our weather recommendation system consists of five interconnected modules working together to provide actionable insights based on weather data.
+                  The weather-based recommendation system consists of integrated layers working together to address major constraints in betel cultivation through data-driven insights.
                 </p>
                 
-                <h4 className="font-medium mb-3" style={{ color: 'var(--color-primary-dark)' }}>Key Components</h4>
+                <h4 className="font-medium mb-3" style={{ color: 'var(--color-primary-dark)' }}>Architecture Layers</h4>
                 <ul className="space-y-2 mb-6">
                   {[
-                    "Weather Display Module for intuitive data visualization",
-                    "Alerts Module for critical weather event notifications",
-                    "Data Collection Module for historical and real-time data",
-                    "Machine Learning Sub-module with Random Forest models",
-                    "Recommendation Generation Module for actionable advice"
+                    "Data Collection Layer: OpenMeteo API & Sri Lanka Meteorology",
+                    "Processing Layer: Three specialized Random Forest models",
+                    "Presentation Layer: 7-day calendar with notifications",
+                    "Feature engineering and preprocessing pipelines",
+                    "Location-specific recommendation algorithms"
                   ].map((component, index) => (
                     <li key={index} className="flex items-start">
                       <Check className="h-5 w-5 mr-2 flex-shrink-0" style={{ color: 'var(--color-primary)' }} />
@@ -223,22 +225,25 @@ export default function WeatherRecommendationsPage() {
                 </ul>
               </div>
               
-              <div className="bg-white rounded-xl shadow-md p-8 border border-gray-100">
-                <h3 className="text-2xl font-bold mb-4">Data Sources & Integration</h3>
+              <div className="bg-white rounded-xl shadow-sm p-8 border border-gray-100">
+                <h3 className="text-2xl font-bold mb-4">Weather API Integration</h3>
                 <p className="text-gray-600 mb-6">
-                  The system integrates multiple data sources to provide comprehensive and accurate recommendations tailored to local conditions.
+                  OpenMeteo Weather API integration tested for accuracy across three primary betel cultivation regions with comprehensive performance metrics.
                 </p>
                 
                 <div className="space-y-4">
                   {[
-                    { source: "Weather APIs", details: "Real-time data from OpenMeteo" },
-                    { source: "Historical Records", details: "Sri Lanka Department of Meteorology archives" },
-                    { source: "Traditional Knowledge", details: "Insights from experienced local farmers" },
-                    { source: "Field Observations", details: "On-site validation data collection" }
+                    { metric: "Temperature Forecasting", accuracy: "93.2% (±1.8%)", importance: "Critical for pest correlation" },
+                    { metric: "Rainfall Prediction", accuracy: "87.5% (±4.2%)", importance: "Guides watering schedules" },
+                    { metric: "Humidity Forecasting", accuracy: "91.4% (±2.3%)", importance: "Disease prevention planning" },
+                    { metric: "Historical Data Integration", accuracy: "Three-month validation", importance: "Sri Lanka Meteorology Dept" }
                   ].map((data, index) => (
                     <div key={index} className="bg-gray-50 rounded-lg p-4">
-                      <p className="font-medium" style={{ color: 'var(--color-primary-dark)' }}>{data.source}</p>
-                      <p className="text-gray-600 text-sm">{data.details}</p>
+                      <div className="flex justify-between items-start mb-1">
+                        <p className="font-medium" style={{ color: 'var(--color-primary-dark)' }}>{data.metric}</p>
+                        <span className="text-green-600 font-semibold">{data.accuracy}</span>
+                      </div>
+                      <p className="text-gray-600 text-sm">{data.importance}</p>
                     </div>
                   ))}
                 </div>
@@ -246,27 +251,27 @@ export default function WeatherRecommendationsPage() {
             </motion.div>
           </div>
           
-          {/* Results Section */}
+          {/* Agricultural Impact Results */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="mt-12 bg-white rounded-xl shadow-lg p-8 border border-gray-100"
+            className="mt-12 bg-white rounded-xl  p-8 border border-gray-200"
           >
             <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
-              <h3 className="text-2xl font-bold">Field Testing Results</h3>
+              <h3 className="text-2xl font-bold">Agricultural Impact Assessment</h3>
               <div className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium" style={{ backgroundColor: 'rgba(76, 175, 80, 0.1)', color: 'var(--color-primary-light)' }}>
-                <Cloud className="w-4 h-4 mr-2" />
-                Validated Across 3 Regions
+                <AlertTriangle className="w-4 h-4 mr-2" />
+                Field-Tested Across 3 Regions
               </div>
             </div>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
-                { metric: "Water Usage Reduction", value: "23.7%", icon: <Droplets className="h-6 w-6" /> },
-                { metric: "Fertilizer Efficiency", value: "31.2%", icon: <Thermometer className="h-6 w-6" /> },
-                { metric: "Weather Damage Prevention", value: "76.4%", icon: <Shield className="h-6 w-6" /> },
-                { metric: "User Satisfaction", value: "92%", icon: <Smartphone className="h-6 w-6" /> }
+                { metric: "Water Usage Reduction", value: "21%", detail: "During rainy periods", icon: <Droplets className="h-6 w-6" /> },
+                { metric: "Fertilizer Efficiency", value: "17%", detail: "Nutrient utilization improvement", icon: <Thermometer className="h-6 w-6" /> },
+                { metric: "Extreme Weather Protection", value: "90%", detail: "Farms with minimal damage", icon: <Shield className="h-6 w-6" /> },
+                { metric: "Overall Profitability", value: "20%", detail: "Improvement with system", icon: <TrendingUp className="h-6 w-6" /> }
               ].map((stat, index) => (
                 <div key={index} className="bg-gray-50 rounded-xl p-6 text-center">
                   <div className="inline-flex items-center justify-center p-3 rounded-full mb-4" style={{ backgroundColor: 'var(--color-primary-light)', color: 'white' }}>
@@ -274,8 +279,17 @@ export default function WeatherRecommendationsPage() {
                   </div>
                   <h4 className="text-lg font-medium mb-1" style={{ color: 'var(--color-foreground)' }}>{stat.metric}</h4>
                   <p className="text-2xl font-bold" style={{ color: 'var(--color-primary-dark)' }}>{stat.value}</p>
+                  <p className="text-gray-600 text-sm mt-1">{stat.detail}</p>
                 </div>
               ))}
+            </div>
+            
+            <div className="mt-8 p-4 bg-blue-50 rounded-lg">
+              <p className="text-gray-700 font-medium mb-2">Economic Impact Summary:</p>
+              <p className="text-gray-600 text-sm">
+                Preliminary economic analysis shows 14.5% increase in average yield, 8.0% reduction in input costs, 
+                45.0% decrease in weather-related losses, and 20% overall improvement in profitability for farms using the weather recommendation system.
+              </p>
             </div>
           </motion.div>
         </div>
@@ -286,7 +300,7 @@ export default function WeatherRecommendationsPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold mb-6">Learn More About Our Research</h2>
           <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-            Explore our comprehensive documentation and research findings on the weather recommendations system.
+            Explore our comprehensive documentation and research findings on the three-layer weather recommendations system.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
