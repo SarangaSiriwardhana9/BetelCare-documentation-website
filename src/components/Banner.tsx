@@ -100,22 +100,14 @@ export default function Banner() {
                 <motion.a
                   whileHover={{ scale: 1.05, boxShadow: "0 10px 25px -5px rgba(46, 125, 50, 0.4)" }}
                   whileTap={{ scale: 0.95 }}
-                  href="/research"
+                  href="/documents"
                   className="px-4 md:px-6 py-2.5 md:py-3.5 text-sm md:text-base text-white font-medium rounded-lg shadow-lg transition-all flex items-center justify-center gap-2"
                   style={{ backgroundColor: 'var(--color-primary)' }}
                 >
-                  Explore Research
+                   View Documents
                   <ArrowRight className="w-3.5 h-3.5 md:w-4 md:h-4 ml-1" />
                 </motion.a>
-                <motion.a
-                  whileHover={{ scale: 1.05, backgroundColor: 'rgba(255, 255, 255, 0.15)' }}
-                  whileTap={{ scale: 0.95 }}
-                  href="/documents"
-                  className="px-4 md:px-6 py-2.5 md:py-3.5 text-sm md:text-base text-white backdrop-blur-sm border border-white/30 font-medium rounded-lg shadow-lg transition-all flex items-center justify-center"
-                  style={{ backgroundColor: 'rgba(255, 255, 255, 0.1)' }}
-                >
-                  View Documents
-                </motion.a>
+ 
               </div>
             </motion.div>
           </div>

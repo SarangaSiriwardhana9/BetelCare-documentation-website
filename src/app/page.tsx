@@ -2,9 +2,10 @@
 import Header from "@/components/Header";
 import Banner from "@/components/Banner";
 import AboutSection from "@/components/AboutSection";
-import DomainSection from "@/components/DomainSection"; 
+import VideoSection from "@/components/VideoSection";
+import DomainSection from "@/components/DomainSection";
 import FeaturesSection from "@/components/FeaturesSection";
-import MilestonesSection from "@/components/MilestonesSection"; 
+import MilestonesSection from "@/components/MilestonesSection";
 import ResearchResultsSection from "@/components/ResearchResultsSection";
 import DocumentsSection from "@/components/DocumentsSection";
 import TeamSection from "@/components/TeamSection";
@@ -20,6 +21,9 @@ export default function Home() {
       </div>
       <div id="about">
         <AboutSection />
+      </div>
+      <div id="video">
+        <VideoSection />
       </div>
       <div id="domain">
         <DomainSection />

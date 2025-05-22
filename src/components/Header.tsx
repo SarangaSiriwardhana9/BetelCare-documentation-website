@@ -3,7 +3,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, ChevronDown, Leaf, BarChart, Cloud, ShoppingCart, FileText, Users, Home, Info, CalendarDays } from "lucide-react";
+import { Menu, ChevronDown, Leaf, BarChart, Cloud, ShoppingCart, FileText, Users, Home, Info, CalendarDays, Play } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -18,6 +18,7 @@ const navItems = [
     icon: <Info className="w-4 h-4" />,
     submenu: [
       { name: "About Project", href: "/#about", icon: <Info className="w-4 h-4" /> },
+      { name: "App Demo", href: "/#video", icon: <Play className="w-4 h-4" /> },
       { name: "Domain", href: "/#domain", icon: <FileText className="w-4 h-4" /> },
       { name: "Team", href: "/#team", icon: <Users className="w-4 h-4" /> }
     ]
@@ -28,9 +29,10 @@ const navItems = [
     icon: <Leaf className="w-4 h-4" />,
     submenu: [
       { name: "Features", href: "/#features", icon: <Leaf className="w-4 h-4" /> },
+      { name: "Milestones", href: "/#milestones", icon: <CalendarDays className="w-4 h-4" /> },
       { name: "Results", href: "/#results", icon: <BarChart className="w-4 h-4" /> },
       { name: "Documents", href: "/#documents", icon: <FileText className="w-4 h-4" /> },
-      { name: "Milestones", href: "/#milestones", icon: <CalendarDays className="w-4 h-4" /> }
+      
     ]
   },
   { 
